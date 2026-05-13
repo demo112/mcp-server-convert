@@ -120,6 +120,13 @@ List all supported file extensions and their conversion methods.
 | Text | `.txt`, `.md`, `.rst`, `.log` | Direct passthrough |
 | Images | `.png`, `.jpg` | pytesseract OCR (if available) |
 
+## Support
+
+If this tool helps your workflow, consider supporting its development:
+
+- **GitHub Sponsors**: [Sponsor via Liberapay](https://liberapay.com/yunduai/)
+- **ETH**: `0xddD9f45e14c92846f47C1c1A4431aC2b41D87273`
+
 ## License
 
 MIT
