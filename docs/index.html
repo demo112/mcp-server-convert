@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Server Convert — Document to Markdown Converter for AI Agents</title>
+    <meta name="description" content="Convert PDF, DOCX, HTML, EPUB, CSV, JSON to Markdown for AI agents. Lightweight MCP server with 6 tools for Claude, GPT, and any LLM.">
+    <meta name="keywords" content="MCP server, document converter, PDF to markdown, DOCX to markdown, AI agent, Claude, Model Context Protocol, document processing">
+    <link rel="canonical" href="https://demo112.github.io/mcp-server-convert/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #24292f; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.5rem; margin: 2rem 0 1rem; color: #0969da; }
+        h3 { font-size: 1.2rem; margin: 1.5rem 0 0.75rem; }
+        p { margin: 0.5rem 0; }
+        code { background: #f6f8fa; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f6f8fa; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+        pre code { background: none; padding: 0; }
+        .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-right: 0.3rem; }
+        .badge-blue { background: #ddf4ff; color: #0969da; }
+        .badge-green { background: #dafbe1; color: #116329; }
+        .badge-purple { background: #fbefff; color: #8250df; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .feature-card { background: #f6f8fa; padding: 1rem; border-radius: 8px; }
+        .feature-card h4 { color: #0969da; margin-bottom: 0.3rem; }
+        .cta { background: #0969da; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: 1rem 0; font-weight: 600; }
+        .cta:hover { background: #0860ca; }
+        .comparison { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .comparison th, .comparison td { text-align: left; padding: 0.5rem; border-bottom: 1px solid #d0d7de; }
+        .comparison th { background: #f6f8fa; }
+        footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #d0d7de; color: #656d76; font-size: 0.9rem; }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "MCP Server Convert",
+        "description": "Document to Markdown converter MCP server for AI agents",
+        "url": "https://github.com/demo112/mcp-server-convert",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>📄 MCP Server Convert</h1>
+    <p>
+        <span class="badge badge-blue">MCP Server</span>
+        <span class="badge badge-green">Python</span>
+        <span class="badge badge-purple">AI Agent Tool</span>
+    </p>
+    <p>Convert <strong>PDF, DOCX, HTML, EPUB, CSV, JSON</strong> and more to Markdown — designed for AI agents using the <a href="https://modelcontextprotocol.io/">Model Context Protocol</a>.</p>
+    <a href="https://github.com/demo112/mcp-server-convert" class="cta">⭐ View on GitHub</a>
+
+    <h2>Why MCP Server Convert?</h2>
+    <p>AI agents (Claude, GPT, etc.) need to read documents. But most documents aren't in a format LLMs understand well. This MCP server converts any document to clean Markdown that AI agents can process natively.</p>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>📄 7+ Formats</h4>
+            <p>PDF, DOCX, HTML, EPUB, CSV, JSON, images (OCR)</p>
+        </div>
+        <div class="feature-card">
+            <h4>🔧 6 MCP Tools</h4>
+            <p>convert_file, convert_url, batch_convert, and more</p>
+        </div>
+        <div class="feature-card">
+            <h4>🐍 Python Native</h4>
+            <p>Zero heavy dependencies. Uses Python standard library</p>
+        </div>
+        <div class="feature-card">
+            <h4>🐳 Docker Ready</h4>
+            <p>Single Dockerfile, one command deploy</p>
+        </div>
+    </div>
+
+    <h2>Quick Start</h2>
+    <pre><code># Install
+pip install -r requirements.txt
+
+# Run
+python -m mcp_server_convert</code></pre>
+
+    <h3>Configure in Claude Code</h3>
+    <pre><code>{
+  "mcpServers": {
+    "convert": {
+      "command": "python",
+      "args": ["-m", "mcp_server_convert"],
+      "cwd": "/path/to/mcp-server-convert"
+    }
+  }
+}</code></pre>
+
+    <h3>Configure with Docker</h3>
+    <pre><code>{
+  "mcpServers": {
+    "convert": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-v", "/path/to/files:/data", "mcp-server-convert"]
+    }
+  }
+}</code></pre>
+
+    <h2>Tools Reference</h2>
+    <table class="comparison">
+        <tr><th>Tool</th><th>Description</th></tr>
+        <tr><td><code>convert_file</code></td><td>Convert a local file to Markdown</td></tr>
+        <tr><td><code>convert_url</code></td><td>Fetch a URL and convert to Markdown</td></tr>
+        <tr><td><code>batch_convert</code></td><td>Convert multiple files at once</td></tr>
+        <tr><td><code>convert_directory</code></td><td>Convert all supported files in a directory</td></tr>
+        <tr><td><code>extract_metadata</code></td><td>Get file metadata without full conversion</td></tr>
+        <tr><td><code>list_supported_formats</code></td><td>See all supported file formats</td></tr>
+    </table>
+
+    <h2>vs Other Solutions</h2>
+    <table class="comparison">
+        <tr><th>Feature</th><th>MCP Server Convert</th><th>markdownify-mcp</th></tr>
+        <tr><td>Batch conversion</td><td>✅</td><td>❌</td></tr>
+        <tr><td>Directory scanning</td><td>✅</td><td>❌</td></tr>
+        <tr><td>URL conversion</td><td>✅</td><td>❌</td></tr>
+        <tr><td>Metadata extraction</td><td>✅</td><td>❌</td></tr>
+        <tr><td>Docker support</td><td>✅</td><td>✅</td></tr>
+        <tr><td>Language</td><td>Python</td><td>TypeScript</td></tr>
+        <tr><td>File format support</td><td>7+</td><td>5+</td></tr>
+    </table>
+
+    <h2>Supported Formats</h2>
+    <div class="feature-grid">
+        <div class="feature-card"><h4>PDF</h4><p>Portable Document Format</p></div>
+        <div class="feature-card"><h4>DOCX</h4><p>Microsoft Word</p></div>
+        <div class="feature-card"><h4>HTML</h4><p>Web pages</p></div>
+        <div class="feature-card"><h4>EPUB</h4><p>E-books</p></div>
+        <div class="feature-card"><h4>CSV</h4><p>Spreadsheet data</p></div>
+        <div class="feature-card"><h4>JSON</h4><p>API responses</p></div>
+    </div>
+
+    <h2>Support This Project</h2>
+    <p>If you find this tool useful, consider supporting development:</p>
+    <ul>
+        <li>⭐ Star on <a href="https://github.com/demo112/mcp-server-convert">GitHub</a></li>
+        <li>💰 ETH: <code>0xddD9f45e14c92846f47C1c1A4431aC2b41D87273</code></li>
+    </ul>
+
+    <footer>
+        <p>© 2026 MCP Server Convert · <a href="https://github.com/demo112/mcp-server-convert">GitHub</a> · MIT License</p>
+    </footer>
+</div>
+</body>
+</html>
